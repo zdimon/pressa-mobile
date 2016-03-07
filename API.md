@@ -24,3 +24,6 @@
     <server-name>/top10
 
 ### Response
+
+    { 'status': 0, 'data': [{'title': 'The UFO', 'text': 'bla bla', 'image': '<url>', 'link': '<url>'}, {'title':...}] }
+    { 'status': 1, message: 'Error' }
