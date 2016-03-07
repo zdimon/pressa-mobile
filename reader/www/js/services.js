@@ -1,4 +1,28 @@
-angular.module('starter.services', [])
+angular.module('starter.services', ['ngResource'])
+
+.factory('Auth', ['$http', function($resource, $http, $rootScope) {
+
+            return {
+                        login: login,
+                        logout: logout       
+                   }
+
+            function login($http) {
+
+               // return $resource('http://localhost:8000/top10_list.json'); 
+                 
+            } ;
+
+           
+
+
+
+}])
+
+.factory('Top10', function($resource) {
+    return $resource('http://localhost:8000/top10/:id'); 
+})
+
 
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
