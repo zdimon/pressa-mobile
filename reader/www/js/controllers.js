@@ -11,7 +11,7 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
   Top10.query();
- 
+  alert(window.localStorage['user_id']);
   $scope.chats = Chats.all();
   $scope.remove = function(chat) {
     Chats.remove(chat);
