@@ -1,10 +1,17 @@
 #API
 
+##Conventions
+
+*<server-name>* - Url address like "http://pressa.ru/mobile-api"
+
+*<client-id>* - unique identifier (like ‘D4gh7m’) that represents company or type of client’s application  
+
+
 ## 1. Login request.
 
-### Requiest URL
+### Request URL
 
-    <server-name>/login
+    <server-name>/<client-id>/login
 
 ### Request POST data
 
@@ -19,9 +26,9 @@
 
 ##2. Top 10 articles list.
 
-### Requiest URL
+### Request URL
 
-    <server-name>/top10
+    <server-name>/<client-id>/top10
 
 ### Response
 
@@ -31,9 +38,9 @@
 
 ##3. Top 10 articles detail.
 
-### Requiest URL
+### Request URL
 
-    <server-name>/top10/123
+    <server-name>/<client-id>/top10/123
 
 ### Response
 
@@ -45,7 +52,7 @@
 
 ### Requiest URL
 
-    <server-name>/category
+    <server-name>/<client-id>/category
 
 ### Response
 
@@ -57,7 +64,7 @@
 
 ### Requiest URL
 
-    <server-name>/category/123
+    <server-name>/<client-id>/category/123
 
 ### Response
 
