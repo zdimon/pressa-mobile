@@ -2,7 +2,7 @@
 
 ##Conventions
 
-**<server-name>**  Url address like "http://pressa.ru/mobile-api"
+**server-name**  Url address like "http://pressa.ru/mobile-api"
 
 **<client-id>**  unique identifier (like ‘D4gh7m’) that represents company or type of client’s application  
 
