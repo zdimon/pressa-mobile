@@ -1,0 +1,16 @@
+<ion-view view-title="Топ 10">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="t in top" type="item-text-wrap" href="#/tab/top/{{t.id}}">
+        <img ng-src="{{t.image}}">
+        <h2>{{t.title}}</h2>
+        
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

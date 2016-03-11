@@ -1,0 +1,28 @@
+<ion-view cache-view="false">
+     <ion-nav-title>Статьи</ion-nav-title>
+ </ion-view>
+
+<ion-view>
+  <ion-content class="padding">
+
+    <ion-list>
+
+        <ion-item type="item-text-wrap" ng-repeat="j in articles" class="item-remove-animate item-icon-right" href="#/tab/article/{{ j.id }}">
+         
+          
+          <p>{{ j.title }}</p>
+
+        <i class="icon ion-chevron-right icon-accessory"></i>
+        <a href="#/tab/issue/{{ j.issue }}">
+        <ion-option-button class="button-assertive" >
+          Читать журнал
+        </ion-option-button>
+        </a>
+        </ion-item>
+
+       
+    </ion-list>
+
+  </ion-content>
+</ion-view>
+

@@ -1,26 +1,54 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+.controller('CategoryCtrl', function($scope, Catalog) {
 
-.controller('ChatsCtrl', function($scope, Chats, Top10) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-  Top10.query();
-  alert(window.localStorage['user_id']);
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  };
+   
+   $scope.categories = Catalog.query(); 
+   console.log('CategoryCtrl');
+
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
+.controller('CategoryDetailCtrl', function($scope, $stateParams, Catalog) {
+  console.log('cat detail');
+  $scope.category = Catalog.get({catId:$stateParams.catId});
 })
+
+
+.controller('CategoryDetailJournalCtrl', function($scope, $stateParams, Journal) {
+ console.log('CategoryDetailJournalCtrl');
+ $scope.journal = Journal.get({id:$stateParams.id});
+})
+
+
+.controller('CategoryDetailIssueCtrl', function($scope, $stateParams, Issue) {
+ console.log('CategoryDetailIssueCtrl');
+ $scope.issue = Issue.get({id:$stateParams.id});
+})
+
+
+.controller('TopCtrl', function($scope, Top10) {
+
+  $scope.top = Top10.query();
+ 
+})
+
+.controller('TopDetailCtrl', function($scope, $stateParams, Top10) {
+ 
+  $scope.top = Top10.get({topId:$stateParams.topId});
+})
+
+
+.controller('ArticleCtrl', function($scope, Article) {
+
+  $scope.articles = Article.query();
+ 
+})
+
+.controller('ArticleDetailCtrl', function($scope, $stateParams, Article) {
+ 
+  $scope.article = Article.get({id:$stateParams.id});
+})
+
 
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {

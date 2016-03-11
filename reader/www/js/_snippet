@@ -1,0 +1,22 @@
+.factory('Catalog', ['$http', function($http) {
+
+            return {
+                        list: list,
+                        detail: detail       
+                   }
+
+            function list(callback) {
+               var url = server_url+'/categories';
+               return $http.get(url).success(callback);
+                 
+            };
+
+            function detail(catId,callbak) {
+               var url = server_url+'/categories/'+catId;
+               return $http.get(url).success(callback);
+                 
+            } ;
+
+
+    //return $resource(server_url+'/categories/:catId'); 
+}])

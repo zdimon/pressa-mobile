@@ -1,0 +1,21 @@
+<ion-view cache-view="false">
+     <ion-nav-title>{{ journal.name }} </ion-nav-title>
+ </ion-view>
+
+<ion-view>
+  <ion-content class="padding">
+
+    <div class="list">
+
+        <a ng-repeat="j in journal.issues" class="item item-thumbnail-left" href="#/tab/issue/{{ j.id }}">
+          <img src="{{j.mobile_thumb}}">
+          <h2>{{ j.name }}</h2>
+          <p>{{ j.friendly_date }}</p>
+        </a>
+
+       
+    </div>
+
+  </ion-content>
+</ion-view>
+

@@ -5,6 +5,10 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
+
+//var server_url = 'http://pressa.ru/mobile/test';
+var server_url = 'http://pressa.local/mobile/test';
+
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
@@ -43,34 +47,92 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   // Each tab has its own nav history stack:
 
-  .state('tab.dash', {
-    url: '/dash',
+  .state('tab.category', {
+    url: '/category',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+      'tab-category': {
+        templateUrl: 'templates/tab-category.html',
+        controller: 'CategoryCtrl'
       }
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
+    .state('tab.category-detail', {
+      url: '/category/:catId',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
+        'tab-category': {
+          templateUrl: 'templates/category-detail.html',
+          controller: 'CategoryDetailCtrl'
         }
       }
     })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
+
+    .state('tab.journal', {
+      url: '/journal/:id',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
+        'tab-category': {
+          templateUrl: 'templates/category-detail-journal.html',
+          controller: 'CategoryDetailJournalCtrl'
         }
       }
     })
+
+
+    .state('tab.issue', {
+      url: '/issue/:id',
+      views: {
+        'tab-category': {
+          templateUrl: 'templates/category-detail-issue.html',
+          controller: 'CategoryDetailIssueCtrl'
+        }
+      }
+    })
+
+
+  .state('tab.top', {
+      url: '/top',
+      views: {
+        'tab-top': {
+          templateUrl: 'templates/tab-top.html',
+          controller: 'TopCtrl'
+        }
+      }
+    })
+
+
+
+    .state('tab.top-detail', {
+      url: '/top/:topId',
+      views: {
+        'tab-top': {
+          templateUrl: 'templates/top-detail.html',
+          controller: 'TopDetailCtrl'
+        }
+      }
+    })
+
+  .state('tab.article', {
+      url: '/article',
+      views: {
+        'tab-article': {
+          templateUrl: 'templates/tab-article.html',
+          controller: 'ArticleCtrl'
+        }
+      }
+    })
+
+
+
+    .state('tab.article-detail', {
+      url: '/article/:id',
+      views: {
+        'tab-article': {
+          templateUrl: 'templates/tab-article-detail.html',
+          controller: 'ArticleDetailCtrl'
+        }
+      }
+    })
+
 
   .state('tab.account', {
     url: '/account',
@@ -83,6 +145,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/tab/category');
 
 });
