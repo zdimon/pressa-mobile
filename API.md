@@ -82,6 +82,24 @@
     }
 
 
+##6. Journal detail.
+
+### Requiest URL
+
+    <server-name>/<client-id>/journal/423
+
+### Response
+
+    {"name": "AIF", 
+     "issues": [
+                 {
+                  "friendly_date": "May 26", 
+                  "mobile_thumb": "http://pressa.ru/image", 
+                  "name": "32-2016", 
+                  "id": 87017
+                 }, {...}
+                ]
+    }
 
 
 
