@@ -101,5 +101,16 @@
                 ]
     }
 
+##6. Issue detail.
 
+### Requiest URL
+
+    <server-name>/<client-id>/issue/423
+
+### Response
+
+    {
+     "name": "32-2016", 
+     "pages": [{"cover": "http://pressa.ru/1-low.jpg"}, {...}]
+    }
 
