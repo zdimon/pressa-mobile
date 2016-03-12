@@ -52,7 +52,7 @@
 
 ### Requiest URL
 
-    <server-name>/<client-id>/category
+    <server-name>/<client-id>/categories
 
 ### Response
 
