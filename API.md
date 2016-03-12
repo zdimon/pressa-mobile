@@ -101,7 +101,7 @@
                 ]
     }
 
-##6. Issue detail.
+##7. Issue detail.
 
 ### Requiest URL
 
