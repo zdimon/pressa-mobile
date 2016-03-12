@@ -64,7 +64,7 @@
 
 ### Requiest URL
 
-    <server-name>/<client-id>/category/123
+    <server-name>/<client-id>/categories/144
 
 ### Response
 
