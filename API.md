@@ -2,7 +2,7 @@
 
 ##Conventions
 
-**server-name** - Url address like "http://pressa.ru/mobile-api"
+**server-name** - Url address like "http://pressa.ru/mobile"
 
 **client-id** - unique identifier (like ‘D4gh7m’) that represents company or type of client’s application  
 
@@ -32,8 +32,8 @@
 
 ### Response
 
-    { 'status': 0, 'data': [{'title': 'The UFO', 'image': '<url>'}, {'title':...}] }
-    { 'status': 1, message: 'Error' }
+    [{'title': 'The UFO', 'image': '<url>', 'id': 123}, {'title':...}] 
+    
 
 
 ##3. Top 10 articles detail.
@@ -44,8 +44,8 @@
 
 ### Response
 
-    { 'status': 0, 'data': [{'title': 'The UFO', 'text': 'bla bla', 'image': '<url>', 'link': '<url>', 'author': 'Ivanov', 'journal': 'Zdorove'}] }
-    { 'status': 1, message: 'Error' }
+    { 'text': 'bla bla', 'title': 'bla' }
+    
 
 
 ##4. Category list.
@@ -56,8 +56,8 @@
 
 ### Response
 
-    { 'status': 0, 'data': [{'title': 'The UFO', 'image': '<url>'}, {'title':...}] }
-    { 'status': 1, message: 'Error' }
+   [{'thumb': 'path/to/image', 'sequence': '3', 'name': 'Sport'}, {...}]
+   
 
 
 ##5. Category detail.
@@ -68,8 +68,18 @@
 
 ### Response
 
-    { 'status': 0, 'data': [{'title': 'The UFO', 'text': 'bla bla', 'image': '<url>', 'link': '<url>', 'author': 'Ivanov', 'journal': 'Zdorove'}] }
-    { 'status': 1, message: 'Error' }
+    {"name": "Sport", "id": 123, "journals": 
+        [
+            {"tumb": "/previewmts/api/get/cover/journal/170-220/1945", 
+             "description": "bla bla", 
+             "sequence": 0, 
+             "price": 15.95, 
+             "mobile_thumb": "http://pressa.ru/image", 
+             "id": 1945, 
+             "name": "Zdorove"
+         } , {....}
+        ]
+    }
 
 
 

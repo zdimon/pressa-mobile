@@ -50,6 +50,37 @@ angular.module('starter.controllers', [])
 })
 
 
+.controller('LoginCtrl', function($scope, $stateParams, $ionicModal, $rootScope) {
+ 
+  $ionicModal.fromTemplateUrl('templates/login-form.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.modal = modal
+  });
+
+  $scope.openModal = function() {
+    $scope.modal.show()
+  }
+
+  $scope.closeModal = function() {
+    $scope.modal.hide();
+  };
+
+  $scope.$on('$destroy', function() {
+    $scope.modal.remove();
+  });
+
+  $scope.submit = function() {
+     $rootScope.is_auth = 'true';
+     $scope.modal.hide();
+  }
+
+
+
+})
+
+
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
     enableFriends: true

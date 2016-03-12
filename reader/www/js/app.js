@@ -11,11 +11,11 @@ var server_url = 'http://pressa.local/mobile/test';
 
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $rootScope) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
-
+    $rootScope.is_auth = 'false';
     //window.localStorage['user_id'] = 0;
 
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
