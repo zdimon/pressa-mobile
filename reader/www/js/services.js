@@ -1,15 +1,28 @@
 angular.module('starter.services', ['ngResource'])
 
-.factory('Auth', ['$http', function($resource, $http, $rootScope) {
+.factory('Auth', ['$http', function($http, $rootScope, $resource) {
 
             return {
                         login: login,
-                        logout: logout       
+                        logout: logout,   
+                        init: init    
                    }
 
-            function login($http) {
+            function login(callback) {
 
                // return $resource('http://localhost:8000/top10_list.json'); 
+                 
+            } ;
+
+            function logout(callback) {
+
+               // return $resource('http://localhost:8000/top10_list.json'); 
+                 
+            } ;
+
+            function init(callback) {
+
+                return $http.get(server_url+'/init').success(callback);
                  
             } ;
 

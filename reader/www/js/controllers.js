@@ -1,16 +1,55 @@
 angular.module('starter.controllers', [])
 
-.controller('CategoryCtrl', function($scope, Catalog) {
+.controller('CategoryCtrl', function($scope, Catalog, Auth, $ionicPopover, $location, $window, $state) {
 
    
-   $scope.categories = Catalog.query(); 
+  
+
+  $ionicPopover.fromTemplateUrl('templates/popup-categories.html', {
+    scope: $scope
+  }).then(function(popover) {
+    $scope.popover = popover;
+  });
+
+  $scope.selectCategory = function(category_id){
+    $scope.popover.hide();
+    $state.go('tab.category-detail', {catId: category_id}, {location: 'replace'});
+  };
+
+  $scope.openPopover = function($event) {
+    $scope.popover.show($event);
+  };
+  $scope.closePopover = function() {
+    $scope.popover.hide();
+  };
+
+
    console.log('CategoryCtrl');
 
 })
 
-.controller('CategoryDetailCtrl', function($scope, $stateParams, Catalog) {
+.controller('CategoryDetailCtrl', function($scope, $stateParams, Catalog, $ionicPopover, $location, $window, $state) {
   console.log('cat detail');
   $scope.category = Catalog.get({catId:$stateParams.catId});
+
+  $ionicPopover.fromTemplateUrl('templates/popup-categories.html', {
+    scope: $scope
+  }).then(function(popover) {
+    $scope.popover = popover;
+  });
+
+  $scope.selectCategory = function(category_id){
+    $scope.popover.hide();
+    $state.go('tab.category-detail', {catId: category_id}, {location: 'replace'});
+  };
+
+  $scope.openPopover = function($event) {
+    $scope.popover.show($event);
+  };
+  $scope.closePopover = function() {
+    $scope.popover.hide();
+  };
+
 })
 
 

@@ -1,9 +1,24 @@
+
+
+
 <ion-view view-title="Pressa.ru Каталог">
+ 
+ <ion-nav-buttons side="primary">
+          <img src="img/logo.png" /> &nbsp;
+          <button class="button button-outline button-positive" ng-click="openPopover($event)">
+             Категории
+          </button>
+</ion-nav-buttons>
+
+
   <ion-content class="padding">
-    <ion-list>
-        <ion-item ng-repeat="c in categories" href="#/tab/category/{{c.id}}"> {{ c.name }} 
-    
-        </ion-item>
-    </ion-list>
+
+<ks-swiper-container initial-slide="3" speed="2000" loop="true" show-nav-buttons="false" slides-per-view="3" space-between="5" pagination-clickable="false" override-parameters="{effect: 'coverflow',coverflow: {rotate: 50,stretch: 0,depth: 100,modifier: 1,slideShadows : false}}">
+    <ks-swiper-slide class="swiper-slide" ng-repeat="i in new_issues">
+        <img ng-src="{{ i.image }}" width="100%">
+    </ks-swiper-slide>            
+</ks-swiper-container>
+
+
   </ion-content>
 </ion-view>

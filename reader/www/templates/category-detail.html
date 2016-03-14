@@ -1,9 +1,19 @@
 <ion-view cache-view="false">
      <ion-nav-title>{{ category.name }} </ion-nav-title>
+
+ <ion-nav-buttons side="primary">
+          <img src="img/logo.png" /> &nbsp;
+          <button class="button button-outline button-positive" ng-click="openPopover($event)">
+             Категории
+          </button>
+</ion-nav-buttons>
+
  </ion-view>
 
 <ion-view>
   <ion-content class="padding">
+
+
 
     <div class="list">
 
