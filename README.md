@@ -13,6 +13,8 @@
     wget -qO- https://deb.nodesource.com/setup_4.x | sudo bash -
     sudo apt-get install --yes nodejs
 
+    sudo ln -s `which nodejs` /usr/bin/node
+
 ##Ionic and cordova
 
     sudo npm install -g cordova 
