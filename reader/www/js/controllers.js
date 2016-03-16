@@ -1,9 +1,8 @@
 angular.module('starter.controllers', [])
 
-.controller('CategoryCtrl', function($scope, Catalog, Auth, $ionicPopover, $location, $window, $state) {
+.controller('CategoryCtrl', function($scope, Catalog, Auth, $ionicPopover, $location, $window, $state, New) {
 
-   
-  
+    
 
   $ionicPopover.fromTemplateUrl('templates/popup-categories.html', {
     scope: $scope
@@ -118,6 +117,18 @@ angular.module('starter.controllers', [])
 
 
 })
+
+.controller('CarouselController', function($scope) {
+
+    var mySwiper = new Swiper('.swiper-container', {
+        speed: 400,
+        spaceBetween: 100,
+        slidesPerView: 3,
+        centeredSlides: true
+    }); 
+   
+})
+
 
 
 .controller('AccountCtrl', function($scope) {

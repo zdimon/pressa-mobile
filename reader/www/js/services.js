@@ -1,6 +1,6 @@
 angular.module('starter.services', ['ngResource'])
 
-.factory('Auth', ['$http', function($http, $rootScope, $resource) {
+.factory('Auth', ['$http', function($http, $rootScope) {
 
             return {
                         login: login,
@@ -27,6 +27,23 @@ angular.module('starter.services', ['ngResource'])
             } ;
 
 }])
+
+
+.factory('New', ['$http', function($http, $rootScope) {
+
+            return {
+                        get_new: get_new   
+                   }
+
+            function get_new(callback) {
+
+               return $http.get(server_url+'/get_new').success(callback);
+                 
+            } ;
+
+            
+}])
+
 
 
 
