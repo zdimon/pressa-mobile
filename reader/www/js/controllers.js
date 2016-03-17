@@ -118,7 +118,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('CarouselController', function($scope) {
+.controller('CarouselController', function($scope, $rootScope) {
 
     var mySwiper = new Swiper('.swiper-container', {
         speed: 400,
@@ -126,8 +126,21 @@ angular.module('starter.controllers', [])
         slidesPerView: 3,
         centeredSlides: true
     }); 
+    $rootScope.swiper = mySwiper;
    
 })
+
+.directive('imageonload', function($rootScope) {
+return {
+restrict: 'A',
+link: function(scope, element, attrs) {
+element.bind('load', function() {
+$rootScope.swiper.updateSlidesSize();
+});
+}
+};
+})
+
 
 
 

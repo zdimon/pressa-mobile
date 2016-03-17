@@ -11,20 +11,13 @@
 </ion-nav-buttons>
 
 
-  <ion-content class="padding">
-
-<div ng-controller="CarouselController">
-    
-<!-- Slider main container -->
-<div class="swiper-container">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-         <div class="swiper-slide" ng-repeat="i in new_issues"><img ng-src="{{ i.image }}"></div>
+<ion-content class="padding">
+    <div ng-controller="CarouselController">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" ng-repeat="i in new_issues"><img imageonload="" ng-src="{{ i.image }}"></div>
+            </div>
+        </div>
     </div>
-</div>
-
-</div>
-
-
-  </ion-content>
+</ion-content>
 </ion-view>
