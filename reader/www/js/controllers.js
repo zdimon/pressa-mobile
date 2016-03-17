@@ -62,15 +62,19 @@ angular.module('starter.controllers', [])
 
  $scope.issue = Issue.get({id:$stateParams.id});
 
-     var mySwiper = new Swiper('.swiper-container', {
-        speed: 400,
-        spaceBetween: 100,
-        slidesPerView: 3,
-        centeredSlides: true,
-        loop: true
-    }); 
-    $rootScope.swiper = mySwiper;  
-    $timeout(function(){  $rootScope.swiper.updateSlidesSize(); }, 3000);
+    $scope.swiper = {}; //initialize
+    $scope.onReadySwiper = function (swiper)
+    {
+    
+      $scope.swiper = swiper; //update when the swiper is ready
+    };
+    
+     $timeout(function() //give the data a moment to propagate
+       {
+         $scope.swiper.update(); //now run the sizing update - can also use just .update()
+         $scope.swiper.slideTo(0); //show the slider from the beginning
+       }, 3000);
+    
    
 })
 
@@ -138,7 +142,6 @@ angular.module('starter.controllers', [])
       $scope.swiper = swiper; //update when the swiper is ready
     };
     
-
      $timeout(function() //give the data a moment to propagate
        {
          $scope.swiper.update(); //now run the sizing update - can also use just .update()
