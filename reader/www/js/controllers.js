@@ -141,9 +141,9 @@ angular.module('starter.controllers', [])
 
      $timeout(function() //give the data a moment to propagate
        {
-         $scope.swiper.updateSlidesSize(); //now run the sizing update - can also use just .update()
+         $scope.swiper.update(); //now run the sizing update - can also use just .update()
          $scope.swiper.slideTo(0); //show the slider from the beginning
-       }, 300);
+       }, 3000);
 
 
     $scope.readIssue = function(id){
