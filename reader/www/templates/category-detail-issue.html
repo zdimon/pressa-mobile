@@ -5,15 +5,18 @@
 <ion-view>
   <ion-content class="padding">
 
-    <div class="list">
-
-        <a ng-repeat="p in issue.pages" href="#/tab/page/{{ p.id }}">
-          <img src="{{p.cover}}">
-          
-        </a>
-
+    
        
-    </div>
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" ng-repeat="p in issue.pages"><img ng-click="readPage(i.id)"  ng-src="{{ p.cover }}"></div>
+            </div>
+        </div>
+      
+
+
+
 
   </ion-content>
 </ion-view>

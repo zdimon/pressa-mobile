@@ -53,14 +53,25 @@ angular.module('starter.controllers', [])
 
 
 .controller('CategoryDetailJournalCtrl', function($scope, $stateParams, Journal) {
- console.log('CategoryDetailJournalCtrl');
+
  $scope.journal = Journal.get({id:$stateParams.id});
 })
 
 
-.controller('CategoryDetailIssueCtrl', function($scope, $stateParams, Issue) {
- console.log('CategoryDetailIssueCtrl');
+.controller('CategoryDetailIssueCtrl', function($scope, $rootScope, $stateParams, Issue, $timeout) {
+
  $scope.issue = Issue.get({id:$stateParams.id});
+
+     var mySwiper = new Swiper('.swiper-container', {
+        speed: 400,
+        spaceBetween: 100,
+        slidesPerView: 3,
+        centeredSlides: true,
+        loop: true
+    }); 
+    $rootScope.swiper = mySwiper;  
+    $timeout(function(){  $rootScope.swiper.updateSlidesSize(); }, 3000);
+   
 })
 
 
@@ -118,15 +129,20 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('CarouselController', function($scope, $rootScope) {
+.controller('CarouselController', function($scope, $rootScope, $state) {
 
     var mySwiper = new Swiper('.swiper-container', {
         speed: 400,
         spaceBetween: 100,
         slidesPerView: 3,
-        centeredSlides: true
+        centeredSlides: true,
+        loop: true
     }); 
     $rootScope.swiper = mySwiper;
+
+    $scope.readIssue = function(id){
+        $state.go('tab.issue', {id: id}, {location: 'replace'});
+    };
    
 })
 
