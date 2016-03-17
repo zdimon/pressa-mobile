@@ -58,9 +58,20 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('CategoryDetailIssueCtrl', function($scope, $rootScope, $stateParams, Issue, $timeout) {
+.controller('CategoryDetailIssueCtrl', function($scope, $rootScope, $stateParams, Issue, $state) {
 
  $scope.issue = Issue.get({id:$stateParams.id});
+
+ $scope.readPage = function(id){
+       $state.go('tab.page', {id: id}, {location: 'replace'}); 
+ }
+   
+})
+
+
+.controller('ShowPageCtrl', function($scope, $rootScope, $stateParams) {
+
+ $scope.page = 'http://pressa.ru/files/issuepage/private/novoe-vremya--novoe-vremya---/2016/n27-2016/high/2--3-high.jpg';
 
    
 })
@@ -90,7 +101,7 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('LoginCtrl', function($scope, $stateParams, $ionicModal, $rootScope) {
+.controller('LoginCtrl', function($scope, $stateParams, $ionicModal, $rootScope, Auth) {
  
   $ionicModal.fromTemplateUrl('templates/login-form.html', {
     scope: $scope,
@@ -114,6 +125,11 @@ angular.module('starter.controllers', [])
   $scope.submit = function() {
      $rootScope.is_auth = 'true';
      $scope.modal.hide();
+     Auth.login($scope.login,$scope.password,function(rezult){
+        console.log(rezult);
+    })
+     
+
   }
 
 

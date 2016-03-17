@@ -8,9 +8,9 @@ angular.module('starter.services', ['ngResource'])
                         init: init    
                    }
 
-            function login(callback) {
-
-               // return $resource('http://localhost:8000/top10_list.json'); 
+            function login(login,password,callback) {
+                data = {"login": login, "password": password};
+                return $http.post(server_url+'/login', data).success(callback);
                  
             } ;
 

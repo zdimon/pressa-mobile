@@ -8,37 +8,35 @@ navigation history that also transitions its views in and out.
 
 
 
-<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+    <ion-tabs class="tabs-icon-top tabs-color-active-positive">
 
-  <!-- Category Tab -->
-  <ion-tab title="Каталог" icon-off="ion-ios-home-outline" icon-on="ion-ios-home" href="#/category">
-    <ion-nav-view name="tab-category"></ion-nav-view>
-  </ion-tab>
-
-  <!-- Top Tab -->
-  <ion-tab title="ТОП 10" icon-off="ion-ios-star-outline" icon-on="ion-ios-star" href="#/tab/top">
-    <ion-nav-view name="tab-top"></ion-nav-view>
-  </ion-tab>
-
-  <!-- Article Tab -->
-  <ion-tab title="Статьи" icon-off="ion-ios-book-outline" icon-on="ion-ios-book" href="#/tab/article">
-    <ion-nav-view name="tab-article"></ion-nav-view>
-  </ion-tab>
-
-  <div ng-if="is_auth=='true'">
-      <!-- Account Tab -->
-      <ion-tab title="Настройки" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
-        <ion-nav-view name="tab-account"></ion-nav-view>
+      <!-- Category Tab -->
+      <ion-tab title="Каталог" icon-off="ion-ios-home-outline" icon-on="ion-ios-home" href="#/category">
+        <ion-nav-view name="tab-category"></ion-nav-view>
       </ion-tab>
-  </div>
 
-   <div ng-if="is_auth=='false'">
-      <!-- Login link -->
-      <ion-tab title="Логин" icon-off="ion-key" icon-on="ion-key" ng-controller='LoginCtrl' ng-click="openModal()">
+      <!-- Top Tab -->
+      <ion-tab title="ТОП 10" icon-off="ion-ios-star-outline" icon-on="ion-ios-star" href="#/tab/top">
+        <ion-nav-view name="tab-top"></ion-nav-view>
       </ion-tab>
-   </div>
 
-  
+      <!-- Article Tab -->
+      <ion-tab title="Статьи" icon-off="ion-ios-book-outline" icon-on="ion-ios-book" href="#/tab/article">
+        <ion-nav-view name="tab-article"></ion-nav-view>
+      </ion-tab>
+
+      <div ng-if="is_auth=='true'">
+          <!-- Account Tab -->
+          <ion-tab title="Настройки" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
+            <ion-nav-view name="tab-account"></ion-nav-view>
+          </ion-tab>
+      </div>
+
+       <div ng-if="is_auth=='false'">
+          <!-- Login link -->
+          <ion-tab title="Логин" icon-off="ion-key" icon-on="ion-key" ng-controller='LoginCtrl' ng-click="openModal()">
+          </ion-tab>
+       </div>
+    </ion-tabs>
 
 
-</ion-tabs>

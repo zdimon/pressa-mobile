@@ -33,7 +33,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','k
         
         $rootScope.new_issues = rezult.new_issues; 
         $rootScope.categories = rezult.categories; 
-        console.log($rootScope.new_issues);
+        
+
+        
     })
 
     
@@ -41,7 +43,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','k
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+
+    $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+    $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -98,6 +105,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','k
         }
       }
     })
+
+
+    .state('tab.page', {
+      url: '/page/:id',
+      views: {
+        'tab-category': {
+          templateUrl: 'templates/page.html',
+          controller: 'ShowPageCtrl'
+        }
+      }
+    })
+
 
 
   .state('tab.top', {
