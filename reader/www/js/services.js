@@ -10,7 +10,14 @@ angular.module('starter.services', ['ngResource'])
 
             function login(login,password,callback) {
                 data = {"login": login, "password": password};
-                return $http.post(server_url+'/login', data).success(callback);
+                
+                return $http({
+                    method: 'POST',
+                    url: server_url+'/login',
+                    data: data,
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                }).success(callback);
+
                  
             } ;
 

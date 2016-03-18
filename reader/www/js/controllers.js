@@ -103,6 +103,7 @@ angular.module('starter.controllers', [])
 
 .controller('LoginCtrl', function($scope, $stateParams, $ionicModal, $rootScope, Auth) {
  
+  $scope.data = {};
   $ionicModal.fromTemplateUrl('templates/login-form.html', {
     scope: $scope,
     animation: 'slide-in-up'
@@ -124,8 +125,8 @@ angular.module('starter.controllers', [])
 
   $scope.submit = function() {
      $rootScope.is_auth = 'true';
-     $scope.modal.hide();
-     Auth.login($scope.login,$scope.password,function(rezult){
+     
+     Auth.login($scope.data.username,$scope.data.password,function(rezult){
         console.log(rezult);
     })
      
