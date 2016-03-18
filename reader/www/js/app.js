@@ -6,7 +6,7 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 
-var server_url = 'http://api.pressa.ru/mobile/test';
+var server_url = 'http://pressa.ru/mobile/test';
 //var server_url = 'http://pressa.local/mobile/test';
 
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','ksSwiper'])
