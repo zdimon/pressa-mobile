@@ -1,4 +1,4 @@
-#API
+﻿#API
 
 ##Conventions
 
@@ -50,7 +50,7 @@
 
 ##4. Category list.
 
-### Requiest URL
+### Request URL
 
     <server-name>/<client-id>/categories
 
@@ -62,7 +62,7 @@
 
 ##5. Category detail.
 
-### Requiest URL
+### Request URL
 
     <server-name>/<client-id>/categories/144
 
@@ -84,7 +84,7 @@
 
 ##6. Journal detail.
 
-### Requiest URL
+### Request URL
 
     <server-name>/<client-id>/journal/423
 
@@ -103,7 +103,7 @@
 
 ##7. Issue detail.
 
-### Requiest URL
+### Request URL
 
     <server-name>/<client-id>/issue/423
 
@@ -114,3 +114,16 @@
      "pages": [{"cover": "http://pressa.ru/1-low.jpg"}, {...}]
     }
 
+
+##8. Popular.
+
+### Request URL
+
+    <server-name>/<client-id>/popular
+
+### Response
+
+    {
+     "journals": [{name: 'AIF', 'cover': 'uri', 'id': 2341}, {…}] 
+     "magazines": [{name: 'MK', 'cover': 'uri', 'id': 2341}, {…}]
+    }
