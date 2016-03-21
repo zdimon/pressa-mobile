@@ -13,15 +13,33 @@
 
 <ion-content class="padding">
 
-<div ng-controller="CarouselController">
-
-<ks-swiper-container on-ready="onReadySwiper(swiper)" initial-slide="3" speed="2000" loop="true" show-nav-buttons="false" slides-per-view="3" space-between="5" pagination-clickable="false" override-parameters="{effect: 'coverflow',coverflow: {rotate: 50,stretch: 0,depth: 100,modifier: 1,slideShadows : false}}">
-    <ks-swiper-slide class="swiper-slide" ng-repeat="i in new_issues">
-        <img ng-click="readIssue(i.id)" ng-src="{{ i.image }}">
-    </ks-swiper-slide>            
-</ks-swiper-container>
-
-
+    <div ng-controller="CarouselNewCtrl">
+        <h4>Новинки</h4>
+        <ks-swiper-container on-ready="onReadySwiper(swiper)" initial-slide="3" speed="2000" loop="true" show-nav-buttons="false" slides-per-view="3" space-between="5" pagination-clickable="false" override-parameters="{effect: 'coverflow',coverflow: {rotate: 50,stretch: 0,depth: 100,modifier: 1,slideShadows : false}}">
+            <ks-swiper-slide class="swiper-slide" ng-repeat="i in new_issues">
+                <img ng-click="readIssue(i.id)" ng-src="{{ i.image }}">
+            </ks-swiper-slide>            
+        </ks-swiper-container>
     </div>
+
+
+    <div ng-controller="CarouselPopularyCtrl">
+        <h4>Популярное (журналы)</h4>
+        <ks-swiper-container on-ready="onReadySwiper_j(swiper)" initial-slide="3" speed="2000" loop="true" show-nav-buttons="false" slides-per-view="3" space-between="5" pagination-clickable="false" override-parameters="{effect: 'coverflow',coverflow: {rotate: 50,stretch: 0,depth: 100,modifier: 1,slideShadows : false}}">
+            <ks-swiper-slide class="swiper-slide" ng-repeat="i in popular.journals">
+                <img ng-click="readIssue(i.id)" ng-src="{{ i.cover }}">
+            </ks-swiper-slide>            
+        </ks-swiper-container>
+    
+        <h4>Популярное (газеты)</h4>
+        <ks-swiper-container on-ready="onReadySwiper_m(swiper)" initial-slide="3" speed="2000" loop="true" show-nav-buttons="false" slides-per-view="3" space-between="5" pagination-clickable="false" override-parameters="{effect: 'coverflow',coverflow: {rotate: 50,stretch: 0,depth: 100,modifier: 1,slideShadows : false}}">
+            <ks-swiper-slide class="swiper-slide" ng-repeat="i in popular.magazines">
+                <img ng-click="readIssue(i.id)" ng-src="{{ i.cover }}">
+            </ks-swiper-slide>            
+        </ks-swiper-container>
+    </div>
+
+
+
 </ion-content>
 </ion-view>

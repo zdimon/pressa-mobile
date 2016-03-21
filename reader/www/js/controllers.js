@@ -137,7 +137,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('CarouselController', function($scope, $rootScope, $state, $timeout) {
+.controller('CarouselNewCtrl', function($scope, $rootScope, $state, $timeout) {
 
     $scope.swiper = {}; //initialize
     $scope.onReadySwiper = function (swiper)
@@ -158,6 +158,50 @@ angular.module('starter.controllers', [])
     };
    
 })
+
+
+
+.controller('CarouselPopularyCtrl', function($scope, $rootScope, $state, $timeout, Popular) {
+
+    $scope.swiper_j = {}; 
+    $scope.swiper_m = {}; 
+
+    Popular.get(function(rezult){
+        $scope.popular = rezult;
+    })
+
+
+    $scope.onReadySwiper_j = function (swiper)
+    {
+      $scope.swiper_j = swiper; 
+    };
+
+    $scope.onReadySwiper_m = function (swiper)
+    {
+      $scope.swiper_m = swiper; 
+    };
+
+    
+     $timeout(function() 
+       {
+         $scope.swiper_j.update(); 
+         $scope.swiper_j.slideTo(0); 
+         $scope.swiper_m.update(); 
+         $scope.swiper_m.slideTo(0); 
+
+       }, 2000);
+
+
+    $scope.readIssue = function(id){
+        $state.go('tab.issue', {id: id}, {location: 'replace'});
+    };
+   
+})
+
+
+
+
+
 
 .directive('imageonload', function($rootScope) {
 return {
