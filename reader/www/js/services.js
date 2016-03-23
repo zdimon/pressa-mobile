@@ -36,6 +36,24 @@ angular.module('starter.services', ['ngResource'])
 }])
 
 
+.factory('Popular', ['$http', function($http, $rootScope) {
+
+            return {
+                        get: get
+                          
+                   }
+
+            function get(callback) {
+                
+                 return $http.get(server_url+'/popular').success(callback);
+            } ;
+
+            
+}])
+
+
+
+
 .factory('New', ['$http', function($http, $rootScope) {
 
             return {
