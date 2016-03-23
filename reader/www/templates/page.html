@@ -1,12 +1,4 @@
-<style>
-.image {
-    width: 100%;
-    height: 600px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center, center;
-}
-</style>
+
 
 
 <ion-view view-title="Pressa.ru Каталог">
@@ -17,11 +9,9 @@
 <ion-content class="padding">
 
 
-<ion-scroll zooming="true" direction="xy" style="width: 100%; ">
 
-<div class="image" style="background-image: url( {{ page_url }} )"></div>
+<img src="{{ page_url }}" ionic-zoom-view />
 
-</ion-scroll>
 
 </ion-content>
 </ion-view>

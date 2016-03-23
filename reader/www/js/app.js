@@ -9,7 +9,7 @@
 var server_url = 'http://api.pressa.ru/mobile/test';
 //var server_url = 'http://pressa.local/mobile/test';
 
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','ksSwiper'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','ksSwiper', 'ionic-zoom-view'])
 
 .run(function($ionicPlatform, $rootScope, $rootScope, Auth) {
   $ionicPlatform.ready(function() {

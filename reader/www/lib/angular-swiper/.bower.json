@@ -30,7 +30,6 @@
     "commit": "b1fe85b4f92ca53837fa9eab48ca512793641267"
   },
   "_source": "git://github.com/ksachdeva/angular-swiper.git",
-  "_target": "^0.3.2",
-  "_originalSource": "angular-swiper",
-  "_direct": true
+  "_target": "0.3.2",
+  "_originalSource": "angular-swiper"
 }
