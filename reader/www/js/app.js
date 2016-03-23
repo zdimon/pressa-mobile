@@ -6,8 +6,8 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 
-var server_url = 'http://api.pressa.ru/mobile/test';
-//var server_url = 'http://pressa.local/mobile/test';
+//var server_url = 'http://api.pressa.ru/mobile/test';
+var server_url = 'http://pressa.local/mobile/test';
 
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','ksSwiper'])
 
@@ -17,7 +17,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','k
     // for form inputs)
     $rootScope.is_auth = 'false';
     $rootScope.new_issues = [];
-    //window.localStorage['user_id'] = 0;
+    //$rootScope.token = 'none';
+    window.localStorage['user_id'] = 0;
+    if (typeof(window.localStorage['token'])=='undefined') {
+        window.localStorage['token'] = 'none';
+    }
 
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -34,7 +38,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','k
         $rootScope.new_issues = rezult.new_issues; 
         $rootScope.categories = rezult.categories; 
         
-
+     if (typeof(window.localStorage['password'])!='undefined') {
+         
+         Auth.login(window.localStorage['login'],window.localStorage['password'],function(rezult){
+           
+            if(rezult.status==0){
+                $rootScope.is_auth = 'true';
+                window.localStorage['token'] = rezult.token;
+               
+            } 
+         });
+      }
         
     })
 

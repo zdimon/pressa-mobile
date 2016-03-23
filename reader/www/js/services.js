@@ -90,6 +90,23 @@ angular.module('starter.services', ['ngResource'])
     return $resource(server_url+'/issue/:id'); 
 })
 
+.factory('Page', ['$http', function($http, $rootScope) {
+
+            return {
+                        get: get   
+                   }
+
+            function get(id,token,callback) {
+
+                return $http.get(server_url+'/'+id+'/'+token+'/page').success(callback);
+
+               
+                 
+            } ;
+
+            
+}])
+
 
 .factory('Article', function($resource) {
     return $resource(server_url+'/article/:id'); 

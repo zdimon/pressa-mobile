@@ -69,9 +69,18 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('ShowPageCtrl', function($scope, $rootScope, $stateParams) {
+.controller('ShowPageCtrl', function($scope, $rootScope, $stateParams, Page) {
 
- $scope.page = 'http://pressa.ru/files/issuepage/private/novoe-vremya--novoe-vremya---/2016/n27-2016/high/2--3-high.jpg';
+ 
+     Page.get($stateParams.id, window.localStorage['token'], function(result){
+        $scope.page = result;
+    });
+    
+    $scope.page_url = server_url+'/'+$stateParams.id+'/'+window.localStorage['token']+'/page'
+    $scope.page = $stateParams.id;
+    $scope.token = window.localStorage['token'];
+    
+ //$scope.page = 'http://pressa.ru/files/issuepage/private/novoe-vremya--novoe-vremya---/2016/n27-2016/high/2--3-high.jpg';
 
    
 })
@@ -123,9 +132,7 @@ angular.module('starter.controllers', [])
     $scope.modal.hide();
   };
 
-  $scope.$on('$destroy', function() {
-    $scope.modal.remove();
-  });
+
 
   $scope.submit = function() {
      
@@ -134,6 +141,9 @@ angular.module('starter.controllers', [])
         console.log(rezult);
         if(rezult.status==0){
             $rootScope.is_auth = 'true';
+            window.localStorage['token'] = rezult.token;
+            window.localStorage['login'] = $scope.data.username;
+            window.localStorage['password'] = $scope.data.password;
             $scope.modal.hide();
         } 
         var myPopup = $ionicPopup.show({

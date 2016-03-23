@@ -13,14 +13,13 @@
 
     <server-name>/<client-id>/login
 
-### Request POST data inside post body section.
+### Request json data inside post body section.
 
-    login = user
-    password = ****
+       {"login": login, "password": password}
 
 ### Response
 
-    { 'status': 0, message: 'Welcome', 'user_id': 345, ‘token’: ‘3ewq6sde6wfew6few’ }
+    { 'status': 0, message: 'Welcome', 'user_id': 345 }
     { 'status': 1, message: 'Error' }
 
 
@@ -50,7 +49,7 @@
 
 ##4. Category list.
 
-### Request URL
+### Requiest URL
 
     <server-name>/<client-id>/categories
 
@@ -62,7 +61,7 @@
 
 ##5. Category detail.
 
-### Request URL
+### Requiest URL
 
     <server-name>/<client-id>/categories/144
 
@@ -84,7 +83,7 @@
 
 ##6. Journal detail.
 
-### Request URL
+### Requiest URL
 
     <server-name>/<client-id>/journal/423
 
@@ -103,7 +102,7 @@
 
 ##7. Issue detail.
 
-### Request URL
+### Requiest URL
 
     <server-name>/<client-id>/issue/423
 
@@ -114,16 +113,3 @@
      "pages": [{"cover": "http://pressa.ru/1-low.jpg"}, {...}]
     }
 
-
-##8. Popular.
-
-### Request URL
-
-    <server-name>/<client-id>/popular
-
-### Response
-
-    {
-     "journals": [{name: 'AIF', 'cover': 'uri', 'id': 2341}, {…}] 
-     "magazines": [{name: 'MK', 'cover': 'uri', 'id': 2341}, {…}]
-    }
