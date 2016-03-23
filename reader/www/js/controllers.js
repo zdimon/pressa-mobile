@@ -101,9 +101,13 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('LoginCtrl', function($scope, $stateParams, $ionicModal, $rootScope, Auth) {
+.controller('LoginCtrl', function($scope, $stateParams, $ionicModal, $rootScope, Auth, $ionicPopup, $timeout) {
  
   $scope.data = {};
+
+
+
+
   $ionicModal.fromTemplateUrl('templates/login-form.html', {
     scope: $scope,
     animation: 'slide-in-up'
@@ -124,10 +128,24 @@ angular.module('starter.controllers', [])
   });
 
   $scope.submit = function() {
-     $rootScope.is_auth = 'true';
+     
      
      Auth.login($scope.data.username,$scope.data.password,function(rezult){
         console.log(rezult);
+        if(rezult.status==0){
+            $rootScope.is_auth = 'true';
+            $scope.modal.hide();
+        } 
+        var myPopup = $ionicPopup.show({
+            template: '<h4> '+rezult.message+' </h4>',
+            title: 'Вход',
+            scope: $scope,
+          });
+
+          $timeout(function() {
+             myPopup.close(); //close the popup after 3 seconds for some reason
+          }, 3000);
+        
     })
      
 
