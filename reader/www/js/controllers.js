@@ -69,13 +69,25 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('ShowPageCtrl', function($scope, $rootScope, $stateParams, Page) {
+.controller('ShowPageCtrl', function($scope, $rootScope, $stateParams, Page, $ionicGesture ) {
+
+    element = angular.element(document.querySelector('#eventCiao'));
+    //$ionicGesture.on('on-tap', function(){ alert('sss'); }, element);
+
+       $ionicGesture.on('on-swipe', function(e)
+        {
+            $scope.zoom = e.gesture.scale;
+            $scope.$apply();        
+            console.log(e.gesture.scale)
+        },element);
 
  
      Page.get($stateParams.id, window.localStorage['token'], function(result){
         $scope.page = result;
     });
     
+    
+
     $scope.page_url = server_url+'/'+$stateParams.id+'/'+window.localStorage['token']+'/page'
     $scope.page = $stateParams.id;
     $scope.token = window.localStorage['token'];
