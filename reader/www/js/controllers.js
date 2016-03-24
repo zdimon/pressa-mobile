@@ -74,14 +74,14 @@ angular.module('starter.controllers', [])
     element = angular.element(document.querySelector('#eventCiao'));
     //$ionicGesture.on('on-tap', function(){ alert('sss'); }, element);
        $scope.zoom = 30;
-       $ionicGesture.on('pinchin', function(e)
+       $ionicGesture.on('pinch-in', function(e)
         {
             $scope.zoom = e.gesture.scale;
             $scope.$apply();        
             console.log(e.gesture.scale)
         },element);
 
-       $ionicGesture.on('pinchout', function(e)
+       $ionicGesture.on('pinch-out', function(e)
         {
             $scope.zoom = e.gesture.scale;
             $scope.$apply();        
