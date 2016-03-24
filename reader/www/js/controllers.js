@@ -81,12 +81,7 @@ angular.module('starter.controllers', [])
             console.log(e.gesture.scale)
         },element);
 
-       $ionicGesture.on('pinch-out', function(e)
-        {
-            $scope.zoom = e.gesture.scale;
-            $scope.$apply();        
-            console.log(e.gesture.scale)
-        },element);
+       
 
 
  
