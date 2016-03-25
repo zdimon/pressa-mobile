@@ -1,4 +1,4 @@
-#API
+﻿#API
 
 ##Conventions
 
@@ -127,3 +127,28 @@
      "journals": [{name: 'AIF', 'cover': 'uri', 'id': 2341}, {…}] 
      "magazines": [{name: 'MK', 'cover': 'uri', 'id': 2341}, {…}]
     }
+
+
+##9. Search.
+
+### Request URL
+
+    <server-name>/<client-id>/search
+
+### POST body data
+
+	{'type': 'all|journal|magazine', 'tags': 'aif'}
+
+### Response
+
+      { 
+		'type': 'all|journal|magazine', 
+		'tags': 'aif', 
+		'journals': [ {'sequence': 12, 
+                            'name': 'AIF', 
+                            'price': '120', 
+                            'cover': 'url-to-image', 
+                            'description': 'description'} … {}
+				]
+	}
+

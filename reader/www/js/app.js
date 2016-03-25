@@ -178,6 +178,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','k
     })
 
 
+  .state('tab.search', {
+    url: '/search',
+    views: {
+      'tab-search': {
+        templateUrl: 'templates/tab-search.html',
+        controller: 'SearchRezCtrl'
+      }
+    }
+  })
+
+
+
   .state('tab.account', {
     url: '/account',
     views: {

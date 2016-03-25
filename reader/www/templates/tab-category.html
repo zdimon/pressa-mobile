@@ -8,6 +8,18 @@
           <button class="button button-outline button-positive" ng-click="openPopover($event)">
              Категории
           </button>
+
+          <span ng-controller="SearchCtrl">
+            <label class="item-input-wrapper textbox-search">
+                <i class="icon ion-ios7-search placeholder-icon"></i>
+                <input type="search" id="search_input" placeholder="Search">
+            </label>
+           <span class="button button-small" ng-click="search()">
+            <i class="icon ion-ios-search placeholder-icon"></i>
+           </span>
+          </span>
+
+    
 </ion-nav-buttons>
 
 

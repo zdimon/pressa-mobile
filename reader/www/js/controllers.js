@@ -203,6 +203,34 @@ angular.module('starter.controllers', [])
 })
 
 
+.controller('SearchRezCtrl', function($scope, $rootScope, $state, Search, $timeout) {
+   
+    alert('sss');
+   
+})
+
+
+.controller('SearchCtrl', function($scope, $rootScope, $state, Search, $timeout) {
+   
+    $scope.search = function(){
+        $state.go('search');
+        tag = angular.element(document.querySelector('#search_input')).val();
+        Search.go(tag,function(result){
+
+            $scope.search_result = result;
+            $timeout(function() {
+              $state.go('search');
+            }, 0);
+            //$state.go('tab.search');
+
+        });
+        
+    }
+   
+})
+
+
+
 
 .controller('CarouselPopularyCtrl', function($scope, $rootScope, $state, $timeout, Popular) {
 

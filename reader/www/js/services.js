@@ -113,5 +113,28 @@ angular.module('starter.services', ['ngResource'])
 })
 
 
+.factory('Search', ['$http', function($http, $rootScope) {
+
+            return {
+                        go: go,
+                   }
+
+            function go(tag,callback) {
+                data = {"type": "all", "tags": tag};
+                
+                return $http({
+                    method: 'POST',
+                    url: server_url+'/search',
+                    data: data,
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                }).success(callback);
+
+                 
+            } ;
+
+           
+}])
+
+
 
 
