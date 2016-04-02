@@ -5,6 +5,7 @@ angular.module('starter.services', ['ngResource'])
             return {
                         login: login,
                         logout: logout,   
+                        registration: registration,
                         init: init    
                    }
 
@@ -20,6 +21,21 @@ angular.module('starter.services', ['ngResource'])
 
                  
             } ;
+
+
+            function registration(login,password,email,callback) {
+                data = {"username": login, "password": password, 'email': email};
+                
+                return $http({
+                    method: 'POST',
+                    url: server_url+'/registration',
+                    data: data,
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                }).success(callback);
+
+                 
+            } ;
+
 
             function logout(callback) {
 

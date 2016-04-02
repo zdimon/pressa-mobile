@@ -152,3 +152,32 @@
 				]
 	}
 
+
+
+##10. Registration.
+
+### Request URL
+
+    <server-name>/<client-id>/registration
+
+### POST body data
+
+	{'username': 'user', 'password': '1234', 'email': 'ddd@dd.dd'}
+
+### Response
+
+        {
+        'status': 1,
+        'message': 'Пользователь с таким логином уже существует',
+        'user_id': 1254,
+        }
+
+
+        {
+        'status': 1,
+        'message': 'Вы успешно зарегистрированы',
+        'user_id': 1254,
+        }
+				
+
+
