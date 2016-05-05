@@ -152,3 +152,34 @@
 				]
 	}
 
+
+##10. Registration.
+
+### Request URL
+
+    <server-name>/<client-id>/registration
+
+### POST body data
+
+	{'username': 'user', 'password': '123', 'email': 'www@ww.ww'}
+
+### Response
+
+
+
+##10. Edit profile.
+
+### Request URL
+
+    <server-name>/<client-id>/save_profile
+
+### POST body data
+
+	{'username': 'user', 'password': '123', 'email': 'www@ww.ww', 'token': '3r23xedqwe2e3xedqwdqwq2423r'}
+
+### Response
+
+    {'status': 0|1 'message': 'ok|some error'}
+
+	
+

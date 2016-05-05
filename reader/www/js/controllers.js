@@ -129,7 +129,7 @@ angular.module('starter.controllers', [])
  
   $scope.data = {};
 
-
+    
 
 
   $ionicModal.fromTemplateUrl('templates/login-form.html', {
@@ -160,6 +160,8 @@ angular.module('starter.controllers', [])
             window.localStorage['login'] = $scope.data.username;
             window.localStorage['password'] = $scope.data.password;
             $scope.modal.hide();
+            $rootScope.profile = rezult.profile;
+            console.log($scope.profile);
         } 
         var myPopup = $ionicPopup.show({
             template: '<h4> '+rezult.message+' </h4>',
@@ -288,8 +290,41 @@ $rootScope.swiper.updateSlidesSize();
 
 
 
-.controller('AccountCtrl', function($scope) {
+.controller('AccountCtrl', function($scope,$rootScope,$state, $location, Auth, $ionicPopup, $timeout) {
+
+  
+
   $scope.settings = {
     enableFriends: true
   };
+
+
+  $scope.edit_profile = function(){
+    data = {'username': $scope.profile.username, 'password': $scope.profile.password, 'email': $scope.profile.email, 'token': window.localStorage['token']}
+    Auth.save_profile(data,function(result){
+
+        var myPopup = $ionicPopup.show({
+            template: '<h4> '+result.message+' </h4>',
+            title: 'Сохранение профиля',
+            scope: $scope,
+          });
+
+          $timeout(function() {
+             myPopup.close(); //close the popup after 3 seconds for some reason
+          }, 2000);
+
+        
+    });
+
+  };
+
+  $scope.logout = function(){
+
+    $rootScope.is_auth = 'false';
+     //var url = "http://" + local_config.chat_url + "#/" + $rootScope.currentUserId+'/'+opponent_id;
+    //$location.path('/tab/category');
+    $state.go('tab.category',null,{location: 'replace'});
+  };
+
+
 });

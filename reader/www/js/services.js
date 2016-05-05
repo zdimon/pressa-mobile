@@ -5,6 +5,7 @@ angular.module('starter.services', ['ngResource'])
             return {
                         login: login,
                         logout: logout,   
+                        save_profile: save_profile,   
                         init: init    
                    }
 
@@ -20,6 +21,19 @@ angular.module('starter.services', ['ngResource'])
 
                  
             } ;
+
+            function save_profile(data,callback) {
+
+                
+                return $http({
+                    method: 'POST',
+                    url: server_url+'/save_profile',
+                    data: data,
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                }).success(callback);
+                 
+            };
+
 
             function logout(callback) {
 

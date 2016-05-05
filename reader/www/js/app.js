@@ -6,7 +6,12 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 
+if(window.location.href.indexOf("localhost")==-1) {
 var server_url = 'http://api.pressa.ru/mobile/test';
+} else {
+var server_url = 'http://pressa.local/mobile/test';
+}
+
 //var server_url = 'http://pressa.local/mobile/test';
 
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','ksSwiper', 'ionic-zoom-view'])
@@ -33,6 +38,25 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','k
       StatusBar.styleDefault();
     }
 
+
+    $rootScope.HideIfAuth = function(){
+        if ($rootScope.is_auth == 'false') {
+         return "ng-show";
+        } else {
+         return "ng-hide";
+        }
+    }
+
+    $rootScope.ShowIfAuth = function(){
+        if ($rootScope.is_auth == 'false') {
+         return "ng-hide";
+        } else {
+         return "ng-show";
+        }
+    }
+
+
+
     Auth.init(function(rezult){
         
         $rootScope.new_issues = rezult.new_issues; 
@@ -45,7 +69,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','k
             if(rezult.status==0){
                 $rootScope.is_auth = 'true';
                 window.localStorage['token'] = rezult.token;
-               
+                $rootScope.profile = rezult.profile;
             } 
          });
       }
