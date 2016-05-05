@@ -5,11 +5,8 @@ angular.module('starter.services', ['ngResource'])
             return {
                         login: login,
                         logout: logout,   
-<<<<<<< HEAD
                         save_profile: save_profile,   
-=======
                         registration: registration,
->>>>>>> 23c6d4213e00978713cef0b0ca0a54ffeb41e475
                         init: init    
                    }
 
@@ -26,7 +23,7 @@ angular.module('starter.services', ['ngResource'])
                  
             } ;
 
-<<<<<<< HEAD
+
             function save_profile(data,callback) {
 
                 
@@ -38,7 +35,7 @@ angular.module('starter.services', ['ngResource'])
                 }).success(callback);
                  
             };
-=======
+
 
             function registration(login,password,email,callback) {
                 data = {"username": login, "password": password, 'email': email};
@@ -52,7 +49,7 @@ angular.module('starter.services', ['ngResource'])
 
                  
             } ;
->>>>>>> 23c6d4213e00978713cef0b0ca0a54ffeb41e475
+
 
 
             function logout(callback) {

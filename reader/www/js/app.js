@@ -6,18 +6,14 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 
-<<<<<<< HEAD
+
 if(window.location.href.indexOf("localhost")==-1) {
 var server_url = 'http://api.pressa.ru/mobile/test';
 } else {
 var server_url = 'http://pressa.local/mobile/test';
 }
 
-//var server_url = 'http://pressa.local/mobile/test';
-=======
-//var server_url = 'http://api.pressa.ru/mobile/test';
-var server_url = 'http://pressa.local/mobile/test';
->>>>>>> 23c6d4213e00978713cef0b0ca0a54ffeb41e475
+
 
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','ksSwiper', 'ionic-zoom-view'])
 
