@@ -153,6 +153,7 @@
 	}
 
 
+
 ##10. Registration.
 
 ### Request URL
@@ -161,13 +162,27 @@
 
 ### POST body data
 
+
 	{'username': 'user', 'password': '123', 'email': 'www@ww.ww'}
 
 ### Response
 
+        {
+        'status': 1,
+        'message': 'Пользователь с таким логином уже существует',
+        'user_id': 1254,
+        }
 
 
-##10. Edit profile.
+        {
+        'status': 1,
+        'message': 'Вы успешно зарегистрированы',
+        'user_id': 1254,
+        }
+
+
+
+##11 Edit profile.
 
 ### Request URL
 
@@ -182,4 +197,9 @@
     {'status': 0|1 'message': 'ok|some error'}
 
 	
+
+
+				
+
+
 

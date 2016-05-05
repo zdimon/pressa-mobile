@@ -147,7 +147,11 @@ angular.module('starter.controllers', [])
     $scope.modal.hide();
   };
 
+  $scope.reg = function() {
+Auth.registration('loglog','pass','email',function(rezult){
+    });
 
+  }
 
   $scope.submit = function() {
      
