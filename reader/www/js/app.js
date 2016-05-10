@@ -71,6 +71,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','k
                 $rootScope.is_auth = 'true';
                 window.localStorage['token'] = rezult.token;
                 $rootScope.profile = rezult.profile;
+                Auth.get_user_categories(rezult.token,function(result){
+                    $rootScope.profile.categories = result.categories;
+                    console.log($rootScope.profile);
+                });
             } 
          });
       }

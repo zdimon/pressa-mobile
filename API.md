@@ -196,6 +196,33 @@
 
     {'status': 0|1 'message': 'ok|some error'}
 
+
+##12 Get users categories.
+
+### Request URL
+
+    <server-name>/<client-id>/get_user_categories/<token>
+
+
+
+### Response
+
+    {'status': 0|1 'message': 'ok|some error', 'categories': [
+            {'id': 12, 'name': 'Женские', 'exists': true},
+            {'id': 13, 'name': 'Мужские', 'exists': false}
+     ]}
+
+
+##13 Save users categories.
+
+### Request URL
+
+    <server-name>/<client-id>/save_user_categories/<token>
+
+
+
+### Response
+
 	
 
 

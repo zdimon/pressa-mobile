@@ -7,6 +7,7 @@ angular.module('starter.services', ['ngResource'])
                         logout: logout,   
                         save_profile: save_profile,   
                         registration: registration,
+                        get_user_categories: get_user_categories,
                         init: init    
                    }
 
@@ -63,6 +64,14 @@ angular.module('starter.services', ['ngResource'])
                 return $http.get(server_url+'/init').success(callback);
                  
             } ;
+
+
+            function get_user_categories(token,callback) {
+
+                return $http.get(server_url+'/get_user_categories/'+token).success(callback);
+                 
+            } ;
+
 
 }])
 

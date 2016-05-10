@@ -18,6 +18,13 @@
         </label>
       </div>
 
+         <h3> Категории </h3>
+          <label ng-repeat="c in profile.categories" class="item item-input">
+             <ion-toggle  ng-model="c.exists">
+                {{ c.name }}
+            </ion-toggle> 
+           </label>  
+
       <button class="button button-full button-energized" ng-click="edit_profile()">Сохранить</button>
       <button class="button button-full button-energized" ng-click="logout()">Выход</button>
 
