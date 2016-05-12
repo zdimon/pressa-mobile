@@ -217,7 +217,7 @@
 
 ### Request URL
 
-    <server-name>/<client-id>/save_user_categories/<token>
+    <server-name>/<client-id>/save_user_categories
 
 ### Request json POST data inside request's body.
 
