@@ -296,7 +296,19 @@ $rootScope.swiper.updateSlidesSize();
 
 .controller('AccountCtrl', function($scope,$rootScope,$state, $location, Auth, $ionicPopup, $timeout) {
 
-  
+    $scope.changeCategories = function(){
+        data = {'categories':[], 'token': window.localStorage['token']};
+        for (var i = 0; i < $rootScope.profile.categories.length; i++) {
+           data['categories'].push({
+                                    'id':$rootScope.profile.categories[i].id, 
+                                    'exists': $rootScope.profile.categories[i].exists
+                                    });
+
+        }
+        Auth.save_user_categories(data,function(result){
+            console.log(result);
+        });
+    };
 
   $scope.settings = {
     enableFriends: true

@@ -20,7 +20,7 @@
 
          <h3> Категории </h3>
           <label ng-repeat="c in profile.categories" class="item item-input">
-             <ion-toggle  ng-model="c.exists">
+             <ion-toggle ng-change="changeCategories()"  ng-model="c.exists">
                 {{ c.name }}
             </ion-toggle> 
            </label>  

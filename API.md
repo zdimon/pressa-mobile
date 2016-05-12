@@ -197,7 +197,7 @@
     {'status': 0|1 'message': 'ok|some error'}
 
 
-##12 Get users categories.
+##12 Get users' categories.
 
 ### Request URL
 
@@ -213,19 +213,33 @@
      ]}
 
 
-##13 Save users categories.
+##13 Save users' categories.
 
 ### Request URL
 
     <server-name>/<client-id>/save_user_categories/<token>
 
+### Request json POST data inside request's body.
+
+    { 'token': 'eb09c5a2bccb5d5224701091b8a57e4f9bae93d7', 
+      'categories': [
+                        {u'id': 150, u'exists': False}, 
+                        {u'id': 151, u'exists': True}, 
+                        {u'id': 152, u'exists': True}
+                    ]
+    }
 
 
 ### Response
 
+        {
+        'status': 1,
+        'message': 'error'
+        }
 	
 
 
+        { status=0,  message="ok",  categories=[...]}
 				
 
 

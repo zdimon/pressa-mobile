@@ -8,6 +8,7 @@ angular.module('starter.services', ['ngResource'])
                         save_profile: save_profile,   
                         registration: registration,
                         get_user_categories: get_user_categories,
+                        save_user_categories: save_user_categories,
                         init: init    
                    }
 
@@ -71,6 +72,20 @@ angular.module('starter.services', ['ngResource'])
                 return $http.get(server_url+'/get_user_categories/'+token).success(callback);
                  
             } ;
+
+
+            function save_user_categories(data,callback) {
+
+                
+                return $http({
+                    method: 'POST',
+                    url: server_url+'/save_user_categories',
+                    data: data,
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                }).success(callback);
+                 
+            };
+
 
 
 }])
