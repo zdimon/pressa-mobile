@@ -90,6 +90,21 @@ angular.module('starter.services', ['ngResource'])
 
 }])
 
+.factory('Collection', ['$http', function($http, $rootScope) {
+
+            return {
+                        get_list: get_list
+                          
+                   }
+
+            function get_list(token, callback) {
+                
+                 return $http.get(server_url+'/my_collection/'+token).success(callback);
+            } ;
+
+            
+}])
+
 
 .factory('Popular', ['$http', function($http, $rootScope) {
 

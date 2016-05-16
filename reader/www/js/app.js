@@ -227,6 +227,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','k
         controller: 'AccountCtrl'
       }
     }
+  })
+
+
+  .state('tab.collection', {
+    url: '/collection',
+    views: {
+      'tab-account': {
+        templateUrl: 'templates/tab-collection.html',
+        controller: 'CollectionCtrl'
+      }
+    }
   });
 
   // if none of the above states are matched, use this as the fallback

@@ -291,7 +291,14 @@ $rootScope.swiper.updateSlidesSize();
 };
 })
 
+.controller('CollectionCtrl', function($scope,$rootScope,$state, $location, Collection) {
 
+        Collection.get_list(window.localStorage['token'],function(result){
+                console.log(result);
+                $scope.journals = result.journals;
+        });
+
+})
 
 
 .controller('AccountCtrl', function($scope,$rootScope,$state, $location, Auth, $ionicPopup, $timeout) {

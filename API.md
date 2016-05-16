@@ -240,6 +240,48 @@
 
 
         { status=0,  message="ok",  categories=[...]}
+
+
+##14 Get users' collection.
+
+### Request URL
+
+    <server-name>/<client-id>/my_collection/<token>
+
+
+
+### Response
+
+        {
+        'status': 1,
+        'message': 'error'
+        }
+	
+
+
+         
+      {
+        'status': 0,
+        'journals': [
+                     {
+                     'id': 12, 
+                     'journal_id': 1234, 
+                     'name': 'AIF',
+                     'mobile_thumb': 'http://pressa.ru/image.jpg', 
+                     'description': 'description', 
+                     'price': '10.00',
+                     'count': '3' 
+                    },
+                    {...}
+                    ]
+      }
+    
+    id - last transaction
+    count - ammount of issues which was bought
+
+
+
+
 				
 
 

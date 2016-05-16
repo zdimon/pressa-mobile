@@ -32,6 +32,11 @@ navigation history that also transitions its views in and out.
       </ion-tab>
    
 
+      <!-- Collection Tab -->
+      <ion-tab class="{{ ShowIfAuth() }}" title="Моя коллекция" icon-off="ion-ios-heart-outline" icon-on="ion-ios-heart" href="#/tab/collection">
+        <ion-nav-view name="tab-collection"></ion-nav-view>
+      </ion-tab>
+
        
       <!-- Login link -->
       <ion-tab class="{{ HideIfAuth() }}" title="Логин" icon-off="ion-key" icon-on="ion-key" ng-controller='LoginCtrl' ng-click="openModal()">

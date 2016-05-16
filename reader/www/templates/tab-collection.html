@@ -1,0 +1,19 @@
+<ion-view view-title="Моя коллекция">
+    <ion-header-bar>
+      <h1 class="title">Моя коллекция</h1>
+    </ion-header-bar>
+    <ion-content>
+        <ion-list>
+
+            <ion-item type="item-text-wrap" ng-repeat="j in journals" href="#/tab/article/{{ j.id }}">
+             
+              <img src="{{j.mobile_thumb}}" />
+              <p>{{ j.name }} ({{ j.count }} номеров)</p>
+
+           
+            </ion-item>
+
+           
+        </ion-list>      
+    </ion-content>
+</ion-view>
