@@ -281,7 +281,19 @@
 
 
 
+##15 Read one page in good quality.
 
+### Request URL
+
+    <server-name>/<client-id>/<page-id>/<token>/page
+
+###Example
+    
+    http://api.pressa.ru/mobile/test/1621534/eb09c5a2bccb5d5224701091b8a57e4f9bae93d7/page
+
+### Response
+
+Image file in jpeg format.    
 				
 
 
