@@ -309,12 +309,12 @@ Image file in jpeg format.
 
 ####Where
 
-    client-id - name of the partner (is given during registration)
-    user-id - User's identifier
-    issue-id - Issue's identifier
-    hash-sing - secure string which is formed by md5(client_id+user_id+issue_id+secret_word)
-    **secret_word** - secure string which is given during registration
-    
+**client-id** - name of the partner (is given during registration)
+**user-id** - User's identifier
+**issue-id** - Issue's identifier
+**hash-sing** - secure string which is formed by md5(client_id+user_id+issue_id+secret_word)
+**secret_word** - secure string which is given during registration
+
 
 ### Response
 
