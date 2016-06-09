@@ -322,5 +322,52 @@ Image file in jpeg format.
 
     {"status": 0, "message": "payment has been created"}
 
+##17 Request to get a list of the subscriptions types.
+
+### Request URL
+
+    <server-name>/<client-id>/get_subscriptions
+
+###Example
+
+    http://pressa.ru/mobile/test/get_subscriptions
+
+###Responce
+
+    [
+        {'id': '7', 'code': '---', 'name': u'Подписка на 1 неделю'},
+        {'id': '1', 'code': '---', 'name': u'Подписка на 1 месяц'},
+        {'id': '3', 'code': '---', 'name': u'Подписка на 3 месяца'},
+        {'id': '6', 'code': '---', 'name': u'Подписка на 6 месяцев'},
+        {'id': '12', 'code': '---', 'name': u'Подписка на 12 месяцев'},
+    ]
+
+
+##18 Request to buy the subscription.
+
+### Request URL
+
+    <server-name>/<client-id>/<user-id>/<type-subscription>/<hash-sign>/buy_subscription
+
+###Example
+    
+    http://pressa.ru/mobile/test/2/7/63f90dc58b0bbf0f6d18a6f1035f08c0/buy_subscription
+
+####Where
+
+- **client-id** - name of the partner (is given during registration)
+- **type-subscription** - Type of the subscription (7,1,3,6 or 12)
+- **user-id** - User's identifier
+- **hash-sing** - secure string which is formed by md5(client-id+user-id+type-subscription+secret-word)
+- **secret-word** - secure string which is given during registration
+
+
+### Response
+
+    {"status": 0, "date_expire": "2016-07-09", "message": "Subscription has been added."}
+
+    {'status': 1, 'message': 'Sign is wrong!' }
+
+
 
 
