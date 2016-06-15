@@ -20,7 +20,17 @@
 
 ### Response
 
-    { 'status': 0, message: 'Welcome', 'user_id': 345, ‘token’: ‘3ewq6sde6wfew6few’ }
+    { 
+        'status': 0, 
+        'message: 'Welcome', 
+        'user_id': 345, 
+        ‘token’: ‘3ewq6sde6wfew6few’,
+        'username': 'vovan', 
+        'email': 'email@gmail.com' 
+
+    }
+
+
     { 'status': 1, message: 'Error' }
 
 
