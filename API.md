@@ -378,6 +378,32 @@ Image file in jpeg format.
 
     {'status': 1, 'message': 'Sign is wrong!' }
 
+##19 Retrieve the article list related to given page number.
+
+### Request URL
+
+    <server-name>/<client-id>/<issue-id>/<page-number>/get_article_by_page
+
+###Example
+    
+    http://pressa.ru/mobile/test/91378/1/get_article_by_page
+
+### Response
+
+    {'status': 1, 'message': 'Для этой страницы статьи отсутствуют!' }
+
+    {'status': 0, 'articles': [
+        {
+            'id': 123
+            'title': 'С новым годом',
+            'text': '.....',
+            'author': 'Дима',
+            'images': [
+                        {'src': 'http://pressa.ru/static/image1.jpg', 'author': 'Вася'},
+                        {'src': 'http://pressa.ru/static/image2.jpg', 'author': 'Петя'}
+                      ]
+        }
+    ] }
 
 
 
