@@ -411,7 +411,7 @@ Image file in jpeg format.
     ] }
 
 
-##19 Geting new issues.
+##20 Geting new issues.
 
 ### Request URL
 
