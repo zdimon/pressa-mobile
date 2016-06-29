@@ -411,4 +411,25 @@ Image file in jpeg format.
     ] }
 
 
+##19 Geting new issues.
+
+### Request URL
+
+    <server-name>/<client-id>/get_new
+
+###Example
+    
+    http://pressa.ru/mobile/test/get_new
+
+### Response
+
+    [
+        {"image": "...", "id": 91772, 'name': '....'}, 
+        
+        {...}
+    ]
+
+
+
+
 
