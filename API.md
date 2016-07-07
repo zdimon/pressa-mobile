@@ -430,6 +430,28 @@ Image file in jpeg format.
     ]
 
 
+##21 Geting new issues from categories.
+
+### Request URL
+
+    <server-name>/<client-id>/<cat_id>-<cat_id>.../get_new_by_categories
+
+###Example
+    
+    http://pressa.ru/mobile/leeco/151-153/get_new_by_categories
+
+### Response
+
+    [
+        {"image": "...", "id": 91772, 'name': '....'}, 
+        
+        {...}
+    ]
+
+
+
+
+
 
 
 
