@@ -1,7 +1,7 @@
 app.controller('MenuCtrl',function($scope) {
 
 })
-.controller('CatalogCtrl',function($scope) {
+.controller('CatalogCtrl',function($scope, Auth) {
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
     { title: 'Chill', id: 2 },
@@ -10,4 +10,9 @@ app.controller('MenuCtrl',function($scope) {
     { title: 'Rap', id: 5 },
     { title: 'Cowbell', id: 6 }
   ];
+
+    Auth.init(function(rezult){
+               
+    });
+
 });

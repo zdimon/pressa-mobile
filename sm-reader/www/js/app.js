@@ -4,6 +4,14 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
+
+if(window.location.href.indexOf("localhost")==-1) {
+    var server_url = 'http://api.pressa.ru/mobile/test';
+} else {
+    var server_url = 'http://pressa.local/mobile/test';
+}
+
+
 app = angular.module('reader', ['ionic'])
 
 .run(function($ionicPlatform) {
