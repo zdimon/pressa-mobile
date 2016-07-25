@@ -11,12 +11,14 @@
 
 ### Request URL
 
-    <server-name>/<client-id>/login
+    <server-name>/<client-id>/<sign>/login
 
 ### Request POST data inside post body section.
 
     login = user
     password = ****
+
+####sign = md5(login+password+secret_word)
 
 ### Response
 
@@ -173,12 +175,14 @@
 
 ### Request URL
 
-    <server-name>/<client-id>/registration
+    <server-name>/<client-id>/<sign>registration
 
 ### POST body data
 
 
 	{'username': 'user', 'password': '123', 'email': 'www@ww.ww'}
+
+####sign = md5(username+password+email+secret_word)
 
 ### Response
 
@@ -195,7 +199,11 @@
         'user_id': 1254,
         }
 
-
+        {
+        'status': 1,
+        'message': 'Security error',
+        'user_id': 1254,
+        }
 
 ##11 Edit profile.
 
@@ -428,6 +436,28 @@ Image file in jpeg format.
         
         {...}
     ]
+
+
+##21 Geting new issues from categories.
+
+### Request URL
+
+    <server-name>/<client-id>/<cat_id>-<cat_id>.../get_new_by_categories
+
+###Example
+    
+    http://pressa.ru/mobile/leeco/151-153/0/0/get_new_by_categories
+
+### Response
+
+    [
+        {"image": "...", "id": 91772, 'name': '....'}, 
+        
+        {...}
+    ]
+
+
+
 
 
 
