@@ -27,7 +27,6 @@ angular.module('starter.services', ['ngResource'])
 
 
             function save_profile(data,callback) {
-
                 
                 return $http({
                     method: 'POST',
@@ -64,14 +63,14 @@ angular.module('starter.services', ['ngResource'])
 
                 return $http.get(server_url+'/init').success(callback);
                  
-            } ;
+            };
 
 
             function get_user_categories(token,callback) {
 
                 return $http.get(server_url+'/get_user_categories/'+token).success(callback);
                  
-            } ;
+            };
 
 
             function save_user_categories(data,callback) {

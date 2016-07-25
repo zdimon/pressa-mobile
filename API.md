@@ -446,7 +446,18 @@ Image file in jpeg format.
 
 ###Example
     
-    http://pressa.ru/mobile/leeco/151-153/0/0/get_new_by_categories
+    http://pressa.ru/mobile/leeco/all/151-153/0/0/get_new_by_categories
+
+    http://pressa.ru/mobile/leeco/magazine/151-153/2016-01-01/2016-03-01/get_new_by_categories
+
+151-153 - list of the categorie's IDs
+
+Ежедневные - 146
+еженедельные - 147
+ежемесячные - 163
+
+magazine|paper|book|all - type of the issues
+
 
 ### Response
 

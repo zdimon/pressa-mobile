@@ -8,9 +8,9 @@
 
 
 if(window.location.href.indexOf("localhost")==-1) {
-var server_url = 'http://api.pressa.ru/mobile/test';
+    var server_url = 'http://api.pressa.ru/mobile/test';
 } else {
-var server_url = 'http://pressa.local/mobile/test';
+    var server_url = 'http://pressa.local/mobile/test';
 }
 
 
