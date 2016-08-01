@@ -468,7 +468,7 @@ magazine|paper|book|all - type of the issues
     ]
 
 
-##22 Adding object to favorites.
+##22 Adding object to the favorite list.
 
 ### Request URL
 
@@ -484,6 +484,25 @@ magazine|paper|book|all - type of the issues
     object_id - object id
     type - journal|issue|article
     sign - md5(user_id,object_id,type,secret_word)
+
+
+##23 Deleting object from the favorite list.
+
+### Request URL
+
+    <server-name>/<client-id>/<user_id>/<object-id>/<type>/<sign>/delete_favorite
+
+###Example
+    
+    http://pressa.ru/mobile/leeco/2/587/article/bb294aa52ecef86162b1eb9bbe78513c/delete_favorite
+
+###Parameters
+
+    user_id - user identifier
+    object_id - object id
+    type - journal|issue|article
+    sign - md5(user_id,object_id,type,secret_word)
+
 
 
 
