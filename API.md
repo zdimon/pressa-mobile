@@ -98,11 +98,11 @@
 
 ### Request URL
 
-    <server-name>/<client-id>/journal/423
+    <server-name>/<client-id>/423/journal_detail
 
 ### Example
 
-    http://pressa.ru/mobile/test/journal/423
+    http://pressa.ru/mobile/test/423/journal_detail
 
 ### Response
 
@@ -122,7 +122,7 @@
 
 ### Request URL
 
-    <server-name>/<client-id>/issue/423
+    <server-name>/<client-id>/423/issue_detail
 
 ### Response
 
@@ -468,9 +468,22 @@ magazine|paper|book|all - type of the issues
     ]
 
 
+##22 Adding object to favorites.
 
+### Request URL
 
+    <server-name>/<client-id>/<user_id>/<object-id>/<type>/<sign>/add_favorite
 
+###Example
+    
+    http://pressa.ru/mobile/leeco/2/587/article/bb294aa52ecef86162b1eb9bbe78513c/delete_favorite
+
+###Parameters
+
+    user_id - user identifier
+    object_id - object id
+    type - journal|issue|article
+    sign - md5(user_id,object_id,type,secret_word)
 
 
 
