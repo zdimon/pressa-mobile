@@ -504,5 +504,22 @@ magazine|paper|book|all - type of the issues
     sign - md5(user_id,object_id,type,secret_word)
 
 
+##24 Reset password.
+
+### Request URL
+
+    <server-name>/<client-id>/<sign>/reset_password
+
+###POST Parameters
+
+    user_id 
+    password
+
+###GET parameters
+ 
+    sign - md5(<client-id><user-id><password><secret-word>)
+
+
+
 
 
