@@ -504,7 +504,23 @@ magazine|paper|book|all - type of the issues
     sign - md5(user_id,object_id,type,secret_word)
 
 
-##24 Reset password.
+##24 Get favorite list.
+
+### Request URL
+
+    <server-name>/<client-id>/<user_id>/<sign>/get_favorite
+
+###Example
+    
+    http://pressa.ru/mobile/leeco/2/ab4319394295a5b9b49c25bb8610f8a3/get_favorite
+
+###Response
+
+    {"status": 0, "article": [587, 588], "journal": [1], "issue": [1]}
+
+
+
+##25 Reset password.
 
 ### Request URL
 
