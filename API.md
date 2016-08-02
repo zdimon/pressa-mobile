@@ -536,6 +536,32 @@ magazine|paper|book|all - type of the issues
     sign - md5(<client-id><user-id><password><secret-word>)
 
 
+##26 Save preference
+
+### Request URL
+
+    <server-name>/<client-id>/<user-id>/<sign>/save_preference
+
+###POST Parameters
+
+    preference - string 
+
+    sing = md5(client-id+user-id+secret-word)
+
+##27 GET preference
+
+### Request URL
+
+    <server-name>/<client-id>/<user-id>/<sign>/get_preference
+
+    sing = md5(client-id+user-id+secret-word)
+
+
+
+
+
+
+
 
 
 
