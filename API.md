@@ -512,7 +512,7 @@ magazine|paper|book|all - type of the issues
 
 ###Example
     
-    http://pressa.ru/mobile/leeco/2/ab4319394295a5b9b49c25bb8610f8a3/get_favorite
+    http://pressa.ru/mobile/leeco/2/bc8bbccf76486083438a7bb0ae8278d2/get_favorite
 
 ###Response
 
