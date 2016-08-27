@@ -557,7 +557,15 @@ magazine|paper|book|all - type of the issues
     sing = md5(client-id+user-id+secret-word)
 
 
+##28 Send a new password to the email.
 
+### Request URL
+
+    <server-name>/<client-id>/new_password_to_email
+
+###POST Parameters
+
+    email 
 
 
 
