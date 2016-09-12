@@ -112,7 +112,8 @@
                   "friendly_date": "May 26", 
                   "mobile_thumb": "http://pressa.ru/image", 
                   "name": "32-2016", 
-                  'release_date': "2016-01-01", 
+                  "has_articles": false,
+                  "release_date": "2016-01-01", 
                   "id": 87017
                  }, {...}
                 ]
