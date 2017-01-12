@@ -92,11 +92,11 @@ angular.module('starter.controllers', [])
 
 
     $scope.next  =  function(){
-        alert(pareInt($stateParams.id)+1);
+        alert(parseInt($stateParams.id)+1);
     }
 
     $scope.prev  =  function(){
-        alert(pareInt($stateParams.id)-1);
+        alert(parseInt($stateParams.id)-1);
     }
 
     $rootScope.is_read = 'true';
