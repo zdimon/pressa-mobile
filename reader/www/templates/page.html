@@ -10,9 +10,11 @@
 
  <!-- <div id="eventCiao" style="border: 1px solid red; width: {{ zoom }}px; height: {{ zoom }}px">{{zoom}}</div> -->
 
- <img id="page" src="{{ page_url }}">
+ <!-- <img id="page" src="{{ page_url }}"> -->
 
-
+ <ion-scroll zooming="true" direction="xy" style="width: 100%; height: 100%">
+   <div style="width: 5000px; height: 5000px; background: url('{{ page_url }}')"></div>
+ </ion-scroll>
 
 
 </ion-content>
