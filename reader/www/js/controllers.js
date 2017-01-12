@@ -2,7 +2,7 @@ angular.module('starter.controllers', [])
 
 .controller('CategoryCtrl', function($scope, Catalog, Auth, $ionicPopover, $location, $window, $state, New) {
 
-    
+
 
   $ionicPopover.fromTemplateUrl('templates/popup-categories.html', {
     scope: $scope
@@ -63,52 +63,53 @@ angular.module('starter.controllers', [])
  $scope.issue = Issue.get({id:$stateParams.id});
 
  $scope.readPage = function(id){
-       $state.go('tab.page', {id: id}, {location: 'replace'}); 
+       $state.go('tab.page', {id: id}, {location: 'replace'});
  }
-   
+
 })
 
 
 .controller('ShowPageCtrl', function($scope, $rootScope, $stateParams, Page, $ionicGesture ) {
 
+    /*
     element = angular.element(document.querySelector('#eventCiao'));
     //$ionicGesture.on('on-tap', function(){ alert('sss'); }, element);
        $scope.zoom = 300;
        $ionicGesture.on('pinch', function(e)
         {
             $scope.zoom = e.gesture.scale;
-            $scope.$apply();        
+            $scope.$apply();
             console.log(e.gesture.scale)
         },element);
 
-       
 
 
- 
+     */
+
      Page.get($stateParams.id, window.localStorage['token'], function(result){
         $scope.page = result;
     });
-    
-    
+
+
 
     $scope.page_url = server_url+'/'+$stateParams.id+'/'+window.localStorage['token']+'/page'
     $scope.page = $stateParams.id;
     $scope.token = window.localStorage['token'];
-    
+
  //$scope.page = 'http://pressa.ru/files/issuepage/private/novoe-vremya--novoe-vremya---/2016/n27-2016/high/2--3-high.jpg';
 
-   
+
 })
 
 
 .controller('TopCtrl', function($scope, Top10) {
 
   $scope.top = Top10.query();
- 
+
 })
 
 .controller('TopDetailCtrl', function($scope, $stateParams, Top10) {
- 
+
   $scope.top = Top10.get({topId:$stateParams.topId});
 })
 
@@ -116,20 +117,20 @@ angular.module('starter.controllers', [])
 .controller('ArticleCtrl', function($scope, Article) {
 
   $scope.articles = Article.query();
- 
+
 })
 
 .controller('ArticleDetailCtrl', function($scope, $stateParams, Article) {
- 
+
   $scope.article = Article.get({id:$stateParams.id});
 })
 
 
 .controller('LoginCtrl', function($scope, $stateParams, $ionicModal, $rootScope, Auth, $ionicPopup, $timeout) {
- 
+
   $scope.data = {};
 
-    
+
 
 
   $ionicModal.fromTemplateUrl('templates/login-form.html', {
@@ -154,8 +155,8 @@ Auth.registration('loglog','pass','email',function(rezult){
   }
 
   $scope.submit = function() {
-     
-     
+
+
      Auth.login($scope.data.username,$scope.data.password,function(rezult){
         console.log(rezult);
         if(rezult.status==0){
@@ -166,7 +167,7 @@ Auth.registration('loglog','pass','email',function(rezult){
             $scope.modal.hide();
             $rootScope.profile = rezult.profile;
             console.log($scope.profile);
-        } 
+        }
         var myPopup = $ionicPopup.show({
             template: '<h4> '+rezult.message+' </h4>',
             title: 'Вход',
@@ -176,9 +177,9 @@ Auth.registration('loglog','pass','email',function(rezult){
           $timeout(function() {
              myPopup.close(); //close the popup after 3 seconds for some reason
           }, 3000);
-        
+
     })
-     
+
 
   }
 
@@ -191,10 +192,10 @@ Auth.registration('loglog','pass','email',function(rezult){
     $scope.swiper = {}; //initialize
     $scope.onReadySwiper = function (swiper)
     {
-    
+
       $scope.swiper = swiper; //update when the swiper is ready
     };
-    
+
      $timeout(function() //give the data a moment to propagate
        {
          $scope.swiper.update(); //now run the sizing update - can also use just .update()
@@ -205,19 +206,19 @@ Auth.registration('loglog','pass','email',function(rezult){
     $scope.readIssue = function(id){
         $state.go('tab.issue', {id: id}, {location: 'replace'});
     };
-   
+
 })
 
 
 .controller('SearchRezCtrl', function($scope, $rootScope, $state, Search, $timeout) {
-   
+
     alert('sss');
-   
+
 })
 
 
 .controller('SearchCtrl', function($scope, $rootScope, $state, Search, $timeout) {
-   
+
     $scope.search = function(){
         $state.go('search');
         tag = angular.element(document.querySelector('#search_input')).val();
@@ -230,9 +231,9 @@ Auth.registration('loglog','pass','email',function(rezult){
             //$state.go('tab.search');
 
         });
-        
+
     }
-   
+
 })
 
 
@@ -240,8 +241,8 @@ Auth.registration('loglog','pass','email',function(rezult){
 
 .controller('CarouselPopularyCtrl', function($scope, $rootScope, $state, $timeout, Popular) {
 
-    $scope.swiper_j = {}; 
-    $scope.swiper_m = {}; 
+    $scope.swiper_j = {};
+    $scope.swiper_m = {};
 
     Popular.get(function(rezult){
         $scope.popular = rezult;
@@ -250,21 +251,21 @@ Auth.registration('loglog','pass','email',function(rezult){
 
     $scope.onReadySwiper_j = function (swiper)
     {
-      $scope.swiper_j = swiper; 
+      $scope.swiper_j = swiper;
     };
 
     $scope.onReadySwiper_m = function (swiper)
     {
-      $scope.swiper_m = swiper; 
+      $scope.swiper_m = swiper;
     };
 
-    
-     $timeout(function() 
+
+     $timeout(function()
        {
-         $scope.swiper_j.update(); 
-         $scope.swiper_j.slideTo(0); 
-         $scope.swiper_m.update(); 
-         $scope.swiper_m.slideTo(0); 
+         $scope.swiper_j.update();
+         $scope.swiper_j.slideTo(0);
+         $scope.swiper_m.update();
+         $scope.swiper_m.slideTo(0);
 
        }, 2000);
 
@@ -272,7 +273,7 @@ Auth.registration('loglog','pass','email',function(rezult){
     $scope.readIssue = function(id){
         $state.go('tab.issue', {id: id}, {location: 'replace'});
     };
-   
+
 })
 
 
@@ -307,7 +308,7 @@ $rootScope.swiper.updateSlidesSize();
         data = {'categories':[], 'token': window.localStorage['token']};
         for (var i = 0; i < $rootScope.profile.categories.length; i++) {
            data['categories'].push({
-                                    'id':$rootScope.profile.categories[i].id, 
+                                    'id':$rootScope.profile.categories[i].id,
                                     'exists': $rootScope.profile.categories[i].exists
                                     });
 
@@ -336,7 +337,7 @@ $rootScope.swiper.updateSlidesSize();
              myPopup.close(); //close the popup after 3 seconds for some reason
           }, 2000);
 
-        
+
     });
 
   };
