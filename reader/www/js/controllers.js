@@ -69,7 +69,7 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('ShowPageCtrl', function($scope, $rootScope, $stateParams, Page, $ionicGesture ) {
+.controller('ShowPageCtrl', function($scope, $rootScope, $stateParams, Page, $ionicGesture, $state ) {
 
     /*
     element = angular.element(document.querySelector('#eventCiao'));
@@ -92,7 +92,9 @@ angular.module('starter.controllers', [])
 
 
     $scope.next  =  function(){
-        alert(parseInt($stateParams.id)+1);
+        //alert(parseInt($stateParams.id)+1);
+        var n = parseInt($stateParams.id)+1;
+        $state.go('/page/'+n);
     }
 
     $scope.prev  =  function(){
