@@ -94,7 +94,7 @@ angular.module('starter.controllers', [])
     $scope.next  =  function(){
         //alert(parseInt($stateParams.id)+1);
         var n = parseInt($stateParams.id)+1;
-        $state.go('/page/'+n);
+        $state.go('/page/:id',{id: n});
     }
 
     $scope.prev  =  function(){
