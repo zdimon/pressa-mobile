@@ -92,13 +92,13 @@ angular.module('starter.controllers', [])
 
 
     $scope.next  =  function(){
-        //alert(parseInt($stateParams.id)+1);
         var n = parseInt($stateParams.id)+1;
         $state.go('tab.page',{id: n});
     }
 
     $scope.prev  =  function(){
-        alert(parseInt($stateParams.id)-1);
+        var n = parseInt($stateParams.id)-1;
+        $state.go('tab.page',{id: n});
     }
 
     $rootScope.is_read = 'true';
