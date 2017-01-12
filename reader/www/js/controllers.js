@@ -91,6 +91,14 @@ angular.module('starter.controllers', [])
     });
 
 
+    $scope.next  =  function(){
+        alert(pareInt($stateParams.id)+1);
+    }
+
+    $scope.prev  =  function(){
+        alert(pareInt($stateParams.id)-1);
+    }
+
     $rootScope.is_read = 'true';
     $scope.page_url = server_url+'/'+$stateParams.id+'/'+window.localStorage['token']+'/page'
     $scope.page = $stateParams.id;
