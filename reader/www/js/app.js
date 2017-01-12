@@ -22,6 +22,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','k
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     $rootScope.is_auth = 'false';
+    $rootScope.is_read = 'false';
     $rootScope.new_issues = [];
     //$rootScope.token = 'none';
     window.localStorage['user_id'] = 0;
@@ -56,17 +57,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','k
         }
     }
 
+    $rootScope.ShowIfRead = function(){
+        if ($rootScope.is_read == 'false') {
+         return "ng-hide";
+        } else {
+         return "ng-show";
+        }
+    }
 
 
     Auth.init(function(rezult){
-        
-        $rootScope.new_issues = rezult.new_issues; 
-        $rootScope.categories = rezult.categories; 
-        
+
+        $rootScope.new_issues = rezult.new_issues;
+        $rootScope.categories = rezult.categories;
+
      if (typeof(window.localStorage['password'])!='undefined') {
-         
+
          Auth.login(window.localStorage['login'],window.localStorage['password'],function(rezult){
-           
+
             if(rezult.status==0){
                 $rootScope.is_auth = 'true';
                 window.localStorage['token'] = rezult.token;
@@ -75,13 +83,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','k
                     $rootScope.profile.categories = result.categories;
                     console.log($rootScope.profile);
                 });
-            } 
+            }
          });
       }
-        
+
     })
 
-    
+
 
   });
 })

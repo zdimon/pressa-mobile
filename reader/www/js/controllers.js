@@ -91,7 +91,7 @@ angular.module('starter.controllers', [])
     });
 
 
-
+    $rootScope.is_read = 'true';
     $scope.page_url = server_url+'/'+$stateParams.id+'/'+window.localStorage['token']+'/page'
     $scope.page = $stateParams.id;
     $scope.token = window.localStorage['token'];

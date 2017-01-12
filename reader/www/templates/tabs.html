@@ -10,6 +10,13 @@ navigation history that also transitions its views in and out.
 
     <ion-tabs class="tabs-icon-top tabs-color-active-positive">
 
+
+        <div class="{{ ShowIfRead() }}" class="item range">
+          <i class="icon ion-volume-low"></i>
+          <input type="range" name="volume">
+          <i class="icon ion-volume-high"></i>
+        </div>
+
       <!-- Category Tab -->
       <ion-tab title="Каталог" icon-off="ion-ios-home-outline" icon-on="ion-ios-home" href="#/category">
         <ion-nav-view name="tab-category"></ion-nav-view>
@@ -25,24 +32,22 @@ navigation history that also transitions its views in and out.
         <ion-nav-view name="tab-article"></ion-nav-view>
       </ion-tab>
 
-      
+
       <!-- Account Tab -->
       <ion-tab class="{{ ShowIfAuth() }}" title="Настройки" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
         <ion-nav-view name="tab-account"></ion-nav-view>
       </ion-tab>
-   
+
 
       <!-- Collection Tab -->
       <ion-tab class="{{ ShowIfAuth() }}" title="Моя коллекция" icon-off="ion-ios-heart-outline" icon-on="ion-ios-heart" href="#/tab/collection">
         <ion-nav-view name="tab-collection"></ion-nav-view>
       </ion-tab>
 
-       
+
       <!-- Login link -->
       <ion-tab class="{{ HideIfAuth() }}" title="Логин" icon-off="ion-key" icon-on="ion-key" ng-controller='LoginCtrl' ng-click="openModal()">
-        
+
       </ion-tab>
-          
+
     </ion-tabs>
-
-
