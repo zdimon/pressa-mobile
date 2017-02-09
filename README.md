@@ -10,14 +10,15 @@
 
 ##Installing nodejs.
 
-    wget -qO- https://deb.nodesource.com/setup_4.x | sudo bash -
-    sudo apt-get install --yes nodejs
+    sudo apt-get install nodejs-legacy
 
-    sudo ln -s `which nodejs` /usr/bin/node
+    sudo npm cache clean -f
+    sudo npm install -g n
+    sudo n stable
 
 ##Ionic and cordova
 
-    sudo npm install -g cordova 
+    sudo npm install -g cordova
 
     sudo npm install -g ionic
 
@@ -49,7 +50,7 @@ Download and unpack SDK http://developer.android.com/sdk/installing/index.html?p
     ionic serve
 
 ### Android on connected device with debug connection = True
-    
+
     ionic run android
 
 ### Ubuntu
@@ -59,4 +60,3 @@ Download and unpack SDK http://developer.android.com/sdk/installing/index.html?p
 ### IOS
 
     ionic run ios
-
