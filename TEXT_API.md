@@ -6,7 +6,7 @@
 
 ###URL pattern http://pressa.ru/textAPI/top10/<date>.json
 
-###Example http://pressa.ru/textAPI/top102016-01-29.json
+###Example http://pressa.ru/textAPI/top10/2016-01-29.json
 
 
 ###Output (json)
