@@ -1,8 +1,8 @@
-##Text reader API
+#Text reader API
 
-#Release
+#Releases
 
-##Retriewing a list of the articles in Top 10 on released date.
+##Retriewing a list of the Top 10 on the released date.
 
 ###URL pattern http://pressa.ru/textAPI/top10/<date>.json
 
@@ -28,8 +28,6 @@
 
         }]
     }
-
-
 
 
 
